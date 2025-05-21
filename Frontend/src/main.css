@@ -1,0 +1,128 @@
+:root{
+    --header: #F4F4F4;
+    --body: #FFFFFF;
+    --text: #696075;
+    --button: #DBE4F9;
+    --b-text: #8F8DE5;
+}
+[dark]{
+    --header: #1D1D20;
+    --body: #2B2B31;
+    --text: #ECECEC;
+    --button: #201C4A;
+    --b-text: #8583F6;
+    --font-text: "Inkut Antiqua";
+}
+
+header{
+    background-color: #F4F4F4;
+    padding: 20px;
+    margin: 0px;
+}
+body.dark header{
+    background-color: #1D1D20;
+    color: #ECECEC;
+}
+
+body{
+    margin: 0px;
+    background-color: #FFFFFF;
+    font-family: "Inkut Antiqua";
+}
+body.dark{
+    background-color: #2B2B31;
+    color: #ECECEC;
+}
+
+h1{
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.meme-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+body.dark .meme-item {
+    background: #1D1D20;
+}
+.meme-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: #e5e7eb;
+}
+body.dark .meme-item:hover {
+    background: #4b5563;
+}
+
+.meme-item img {
+    height: 300px;
+    border-radius: 8px;
+}
+
+.meme-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #696075;
+}
+body.dark .meme-item p {
+    color: #ECECEC;
+}
+
+a{
+    display: inline;
+    background-color: #DBE4F9;
+    height: 60px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #8F8DE5;
+    font-family: "Inkut Antiqua";
+    border: 0px;
+    border-radius: 15px;
+}
+a:hover{
+    background-color: #9fa6b5;
+    color: White;
+}
+body.dark a{
+    background: #201C4A;
+    color: #8583F6;
+}
+
+.switch{
+    align-content: right;
+    background-color: #DBE4F9;
+    color: #8F8DE5;
+    padding: 0px 30px 0px 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline;
+    position: absolute;
+    border-radius: 15px;
+    right: 30px;
+    top: 15px;
+    border: 0px;
+}
+.switch:hover{
+    background: #9fa6b5;
+    color: yellow;
+}
+body.dark .switch{
+    background: #201C4A;
+    color: #8583F6;
+}
+body.dark .switch:hover{
+    background: #9fa6b5;
+    color: yellow;
+}
