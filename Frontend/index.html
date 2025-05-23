@@ -11,13 +11,35 @@
         <div>
             <a href="#" class="menu-button">Все мемы</a>
             <a href="#" class="menu-button">Рандомный мем</a>
-            <button class="switch">☀︎</button>
+
+            <button class="switch">☾</button>
         </div>
     </header>
 
     <main>
         <h1>Все мемы</h1>
         <div class="container"></div>
+        <h1 id="btn-addmeme"><b>Не нашли свой мем? Добавьте его!</b></h1>
+
+        <div id="card-meme">
+            <div class="content">
+                <span id="btn-close">x</span>
+                <img id="img-modal" src="" alt="">
+                <p id="modal-path">Путь до изображения:</p>
+                <div id="div-path">
+                    <input id="input-meme-path" class="modal-input" type="text" placeholder="Введите путь url до картинки"/>
+                    <button id="btn-copy">Скопировать</button>
+                    <button id="btn-paste">Вставить</button>
+                </div>
+                <p id="modal-caption">Наименование:</p>
+                <input id="input-meme-text" class="modal-input" type="text" placeholder="Введите название для картинки"/>
+                <div id="buttons">
+                    <button id="btn-edit">Изменить</button>
+                    <button id="btn-delete">Удалить</button>
+                </div>
+                <button id="btn-modal-addmeme">Добавить мем</button>
+            </div>
+        </div>
     </main>
 
     <script type="text/javascript" src="src/scripts.js"></script>

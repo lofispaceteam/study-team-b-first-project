@@ -1,6 +1,7 @@
 :root{
     --header: #F4F4F4;
     --body: #FFFFFF;
+    --bode-second: #F0F8FF;
     --text: #696075;
     --button: #DBE4F9;
     --b-text: #8F8DE5;
@@ -16,6 +17,7 @@
 
 header{
     background-color: #F4F4F4;
+    color: #696075;
     padding: 20px;
     margin: 0px;
 }
@@ -26,7 +28,8 @@ body.dark header{
 
 body{
     margin: 0px;
-    background-color: #FFFFFF;
+    background-color: #F0F8FF;
+    color: #696075;
     font-family: "Inkut Antiqua";
 }
 body.dark{
@@ -36,17 +39,86 @@ body.dark{
 
 h1{
     text-align: center;
+    color:#8583F6;
 }
+
+button{
+    background: #DBE4F9;
+    color:#8F8DE5;
+    border: 0px;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: "Inkut Antiqua";
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark button{
+    background: #201C4A;
+    color:#8583F6;
+}
+button:hover{
+    background: #9fa6b5;
+    color:White;
+}
+body.dark button:hover{
+    background: #9fa6b5;
+    color:White;
+}
+
+a{
+    display: inline;
+    background-color: #DBE4F9;
+    height: 60px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #8F8DE5;
+    font-family: "Inkut Antiqua";
+    border: 0px;
+    border-radius: 15px;
+}
+body.dark a{
+    background: #201C4A;
+    color: #8583F6;
+}
+a:hover{
+    background-color: #9fa6b5;
+    color: White;
+}
+body.dark a:hover{
+    background-color: #9fa6b5;
+    color: White;
+}
+
+input{
+    color: #696075;
+    font-size: 1.5rem;
+    font-family: "Inkut Antiqua";
+}
+
+p{
+    color: #696075;
+    font-size: 1.5rem;
+    font-family: "Inkut Antiqua";
+}
+body.dark p{
+    color: #ECECEC;
+}
+
+.modal-input{
+    width: 50%;
+}
+
 .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    column-count: repeat(auto-fit, minmax(300px, 1fr));
     padding: 20px;
 }
 
 .meme-item {
     background: #ffffff;
+    display: inline-block;
+    margin: 10px;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
@@ -66,7 +138,9 @@ body.dark .meme-item:hover {
 }
 
 .meme-item img {
-    height: 300px;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
     border-radius: 8px;
 }
 
@@ -79,50 +153,130 @@ body.dark .meme-item p {
     color: #ECECEC;
 }
 
-a{
-    display: inline;
-    background-color: #DBE4F9;
-    height: 60px;
-    padding: 10px 15px;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #8F8DE5;
-    font-family: "Inkut Antiqua";
-    border: 0px;
-    border-radius: 15px;
+#btn-addmeme b{
+    color:#afc7ff;
+    cursor: pointer;
 }
-a:hover{
-    background-color: #9fa6b5;
-    color: White;
+#btn-addmeme::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  height: 45px;
+  width: 0px;
+  border-radius: 15px;
+  z-index: -1;
+  background: #8F8DE5;
+  transition: width 400ms;
 }
-body.dark a{
-    background: #201C4A;
-    color: #8583F6;
+body.dark #btn-addmeme::before {
+    background: #3d368d;
+}
+#btn-addmeme:is(:hover, :focus)::before {
+    width: 540px;
 }
 
 .switch{
-    align-content: right;
-    background-color: #DBE4F9;
-    color: #8F8DE5;
     padding: 0px 30px 0px 25px;
     font-size: 2rem;
     font-weight: bold;
-    display: inline;
     position: absolute;
     border-radius: 15px;
     right: 30px;
-    top: 15px;
-    border: 0px;
+    top: 10px;
+    transition: background-color 1s, color 1s;
 }
 .switch:hover{
     background: #9fa6b5;
     color: yellow;
 }
-body.dark .switch{
-    background: #201C4A;
-    color: #8583F6;
-}
 body.dark .switch:hover{
     background: #9fa6b5;
     color: yellow;
+}
+
+#card-meme{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+#card-meme .content{
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    max-width: 60%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+body.dark #card-meme .content{
+    background-color: #1D1D20;
+    color: #ECECEC;
+}
+
+#img-modal{
+    width: auto;
+    height: auto;
+    max-height: 400px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#modal-path, #modal-caption{
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #696075;
+}
+body.dark #modal-path, body.dark #modal-caption{
+    color: #ECECEC;
+}
+
+#btn-close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: transparent;
+    color:#696075;
+}
+body.dark #btn-close{
+    color:#ECECEC;
+}
+#btn-close:hover{
+    color: #ff5555;
+}
+body.dark #btn-close:hover{
+    color: #ff5555;
+}
+
+#buttons{
+    position: fixed;
+    padding: 30px;
+    gap: 20px;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+#btn-copy{
+    margin: 0 5px;
+}
+
+#btn-modal-addmeme{
+    display: none;
+    position: absolute;
+    margin: 30px 0 0;
+    left: 50%;
+    transform: translatex(-50%);
 }
